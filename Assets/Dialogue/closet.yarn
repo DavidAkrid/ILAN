@@ -10,6 +10,7 @@
   <<if has_flag("has_flashlight")>>
     Please, God, be empty...
   <<else>>
+    <<wait 1.5>>
     Its too dark to be sure it's empty...
   <<endif>>
 <<endif>>
@@ -35,10 +36,14 @@ title: closet_click
   <<if has_flag("mable_found")>>
     <<jump laundryRoom_creakOpen>>
   <<endif>>
+<<elseif has_flag("intent_to_leave")>>
+  Got my coat.
+  <<set_flag "coat_obtained">>
 <<elseif has_flag("paranoid")>>
   <<if has_flag("has_flashlight")>>
     <<load_scene "closet_flashlight">>
   <<else>>
+  <<wait 1>>
     It's too dark to see.
     I need my flashlight.
   <<endif>>
@@ -52,5 +57,6 @@ title: closet_flashlightComplete
 Nothing.
 Just clothes and shoes.
 <<set_flag "closet_searched">>
+<<set_flag "front_door_disturbed">>
 <<load_scene "closet">>
 ===

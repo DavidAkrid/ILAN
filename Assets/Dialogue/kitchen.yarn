@@ -32,11 +32,12 @@ title: kitchen_Trash
 title: kitchen_Phone
 ---
 <<detour kitchen_TrashCheck>>
-<<if has_flag("voicemail_waiting")>>
+<<if has_flag("phone_ringing")>>
+  Who could be calling at a time like this?
+  <<load_scene "kitchen_phone">>
+<<elseif has_flag("voicemail_waiting")>>
   Someone left a voicemail...
   <<load_scene "kitchen_phone">>
-<<elseif has_flag("becky_calling")>>
-  Who could be calling at a time like this?
 <<else>>
   This busted ass phone.
 <<endif>>

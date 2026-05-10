@@ -20,7 +20,9 @@ title: bathRoom_shower
 
 title: bathRoom_shower_check
 ---
+<<wait 1>>
 Thank goodness...
+<<load_scene "bathRoom">>
 ===
 
 title: bathRoom_return

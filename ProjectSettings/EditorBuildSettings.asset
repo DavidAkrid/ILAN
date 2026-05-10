@@ -48,6 +48,18 @@ EditorBuildSettings:
     path: Assets/Scenes/bedRoom_inspect.unity
     guid: 4e526142dc67f384aa73ad9f421ba756
   - enabled: 1
+    path: Assets/Scenes/frontDoorDisturbed.unity
+    guid: f6a07a39eadf6234e97fc8054f0bebc2
+  - enabled: 1
+    path: Assets/Scenes/openFrontDoor.unity
+    guid: 4538a84756ec8004791c8fd0ebb4f58b
+  - enabled: 1
+    path: Assets/Scenes/catTree.unity
+    guid: 183e71402e3523744bc196e7e7de8029
+  - enabled: 1
+    path: Assets/Scenes/newscene.unity
+    guid: a4ad04d9cc1b80f47b6f75e13d98d33c
+  - enabled: 1
     path: Assets/Scenes/laundryRoom.unity
     guid: 35a8ec5161db7dc43b71ef24a3da9359
   - enabled: 1
@@ -68,6 +80,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/purseGame.unity
     guid: 5e7d786ceddc776429fdbc74309b0cc4
+  - enabled: 1
+    path: Assets/Scenes/livingRoom_Photo.unity
+    guid: faf59a00b34819046a0d556aa865e15c
   - enabled: 1
     path: Assets/Scenes/emptyShower.unity
     guid: 489f2d2aeaaf0de429f39198c1ef5bd8

@@ -1,16 +1,19 @@
 ﻿title: kitchen_phone_closeUp
 ---
-<<if has_flag("voicemail_waiting")>>
+<<if has_flag("phone_ringing")>>
+  OMG! Jenny!
+  We're going out to Highlands tonight!
+  Come grab a drink with us!
+  -click-
+  <<unset_flag "phone_ringing">>
+  <<set_flag "intent_to_leave">>
+  Jeez, getting out of here sounds just fine to me.
+<<elseif has_flag("voicemail_waiting")>>
   *Hey, its Mom.*
   *Just calling to say...*
   *I love you!*
   -click-
   I should give her a call sometime...
   <<unset_flag "voicemail_waiting">>
-<<elseif has_flag("becky_calling")>>
-  OMG! Jenny!
-  We're going out to Highlands tonight!
-  Come grab a drink with us!
-  <<unset_flag "becky_calling">>
 <<endif>>
 ===

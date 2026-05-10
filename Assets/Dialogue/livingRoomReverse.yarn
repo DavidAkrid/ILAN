@@ -1,20 +1,41 @@
-﻿title: livingRoomReverse
----
-This is an example of a Yarn Spinner script. Write your dialogue here!
-===
-
-title: livingRoomReverse_Return
+﻿title: livingRoomReverse_Return
 ---
 <<load_scene "livingRoom">>
 ===
 
 title: livingRoomReverse_frontDoor
 ---
+<<if has_flag("intent_to_leave")>>
+  <<if has_flag("keys_obtained") and has_flag("coat_obtained")>>
+    I'm out.
+  <<else>>
+    I'm not ready.
+  <<endif>>
+<<elseif has_flag("front_door_complete")>>
+  <<if has_flag("window_check")>>
+    <<load_scene "openFrontDoor">>
+  <<elseif has_flag("front_door_menu")>>
+    What the hell was that?
+  <<else>>
+    I'm making sure this stays locked.
+  <<endif>>
+<<else>>
 I'm not going outside tonight...
+<<endif>>
 ===
 
 title: livingRoomReverse_keys
 ---
+<<if has_flag("intent_to_leave")>>
+  <<if has_flag("keys_obtained")>>
+    I have my keys.
+    <<stop>>
+  <<else>>
+    I pick up my keys
+    <<set_flag "keys_obtained">>
+    <<stop>>
+  <<endif>>
+<<endif>>
 My keys are a lot lighter these days.
 ===
 
@@ -25,6 +46,15 @@ I've had this TV since I was a girl.
 
 title: livingRoomReverse_window
 ---
+<<if has_flag("front_door_complete")>>
+  <<if has_flag("front_door_menu")>>
+    I don't see anyone out there.
+    <<set_flag "window_check">>
+  <<else>>
+    I really need some curtains.
+  <<endif>>
+  <<stop>>
+<<endif>>
 I really should get some curtains.
 You can see my whole house from outside...
 ===
@@ -50,5 +80,40 @@ title: livingRoomReverse_NoteView
 <<endif>>
 I'm going to throw up...
 <<unset_flag "note_on_ground">>
+<<load_scene "livingRoomReverse">>
+===
+
+title: livingRoomReverse_Starter
+---
+<<if has_flag("front_door_disturbed")>>
+  <<load_scene "frontDoorDisturbed">>
+<<elseif has_flag("intent_to_leave")>>
+  <<if !has_flag("keys_obtained") or !has_flag("coat_obtained")>>
+    I just need my coat and my keys
+  <<endif>>
+<<endif>>
+===
+
+title: livingRoomReversed_frontDoorDisturbed_Starter
+---
+// need to remove! DEBUG
+<<set_flag "front_door_disturbed">>
+<<wait 3>>
+...
+<<unset_flag "front_door_disturbed">>
+<<set_flag "front_door_menu">>
+<<wait 1>>
+They stopped...
+<<set_flag "front_door_complete">>
+<<load_scene "livingRoomReverse">>
+===
+
+title: livingRoomReverse_MandarinCafe
+---
+You've gotta be joking me.
+<<unset_flag "front_door_menu">>
+<<unset_flag "window_check">>
+That gave me a heart attack.
+<<set_flag "phone_ringing">>
 <<load_scene "livingRoomReverse">>
 ===

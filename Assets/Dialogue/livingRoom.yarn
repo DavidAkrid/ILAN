@@ -33,11 +33,7 @@ title: livingRoom_bedroomDoor
 
 title: livingRoom_cat
 ---
-<<if has_flag("mable_found")>>
-  Looks like Mable is feeling okay...
-  <<stop>>
-<<endif>>
-My beautiful cat, Mable.
+<<load_scene "catTree">>
 ===
 
 title: livingRoom_kitchen
@@ -48,4 +44,31 @@ title: livingRoom_kitchen
 title: livingRoom_return
 ---
 <<load_scene "livingRoomReverse">>
+===
+
+title: catTree_Mable
+---
+<<if has_flag("mable_found")>>
+  Looks like Mable is feeling okay...
+  ~mew~
+<<else>>
+~Mew~
+<<endif>>
+<<load_scene "livingRoom">>
+===
+
+title: livingRoom_Photo
+---
+<<load_scene "livingRoom_photo">>
+===
+
+title: photograph
+---
+<<if has_flag("photo_up")>>
+  I thought I left this down...
+  <<unset_flag "photo_up">>
+<<else>>
+  A photo of me and my ex.
+<<endif>>
+<<load_scene "livingRoom">>
 ===

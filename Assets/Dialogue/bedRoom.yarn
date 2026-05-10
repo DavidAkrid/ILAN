@@ -9,13 +9,15 @@
   -Click-
   It's my bedroom.
   I should take off my coat.
-<<elseif !has_flag("coat_removed")>>
-  I should take off my coat.
 <<endif>>
 ===
 
 title: bedRoom_return
 ---
+<<if !has_flag("coat_removed")>>
+  I should take off my coat.
+  <<stop>>
+<<endif>>
 <<load_scene "livingRoom">>
 ===
 

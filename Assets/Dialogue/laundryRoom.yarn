@@ -72,6 +72,7 @@ title: laundryRoom_creakOpen
 ---
 <<set_flag "laundry_door_open">>
 <<set_flag "dryer_open">>
+<<set_flag "photo_up">>
 -creeeak-
 What was that?
 ===

@@ -434,9 +434,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 610812176}
-  flag: voicemail_waiting
-  animationState: PhoneLightVoiceMail
-  invert: 0
+  states:
+  - flag: phone_ringing
+    animationState: PhoneRinging
+    invert: 0
+  - flag: voicemail_waiting
+    animationState: PhoneLightVoiceMail
+    invert: 0
 --- !u!212 &610812178
 SpriteRenderer:
   m_ObjectHideFlags: 0

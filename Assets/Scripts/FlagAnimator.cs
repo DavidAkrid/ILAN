@@ -1,11 +1,19 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class FlagAnimator : MonoBehaviour
 {
+    [Serializable]
+    public struct FlagState
+    {
+        public string flag;
+        public string animationState;
+        public bool invert;
+    }
+
     [SerializeField] private Animator animator;
-    [SerializeField] private string flag;
-    [SerializeField] private string animationState;
-    [SerializeField] private bool invert;
+    [SerializeField] private FlagState[] states;
 
     void OnValidate()
     {
@@ -15,14 +23,28 @@ public class FlagAnimator : MonoBehaviour
 #endif
     }
 
-    void Start() => Refresh();
+    void Start() => StartCoroutine(RefreshNextFrame());
+
+    private IEnumerator RefreshNextFrame()
+    {
+        yield return null;
+        Refresh();
+    }
 
     public void Refresh()
     {
-        bool triggered = GameManager.GetOrCreate().IsTriggered(flag);
-        if (triggered != invert)
-            animator.Play(animationState);
-        else
-            animator.Play("Default");
+        if (animator == null || states == null || states.Length == 0) return;
+        var gm = GameManager.GetOrCreate();
+        foreach (var s in states)
+        {
+            if (string.IsNullOrEmpty(s.flag) || string.IsNullOrEmpty(s.animationState)) continue;
+            bool triggered = gm.IsTriggered(s.flag);
+            if (triggered != s.invert)
+            {
+                animator.Play(s.animationState);
+                return;
+            }
+        }
+        animator.Play("Default");
     }
 }
