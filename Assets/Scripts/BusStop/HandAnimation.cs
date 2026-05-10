@@ -8,17 +8,26 @@ public class HandAnimation : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private string clipName;
     [SerializeField] private string nextScene;
+    [SerializeField] private Animator stuffAnimator;
+    [SerializeField] private string stuffClipName;
 
     void Awake()
     {
         Instance = this;
         gameObject.SetActive(false);
+        if (stuffAnimator != null)
+            stuffAnimator.enabled = false;
     }
 
     public void Play()
     {
         gameObject.SetActive(true);
         animator.Play(clipName);
+        if (stuffAnimator != null)
+        {
+            stuffAnimator.enabled = true;
+            stuffAnimator.Play(stuffClipName);
+        }
         StartCoroutine(WaitForComplete());
     }
 
