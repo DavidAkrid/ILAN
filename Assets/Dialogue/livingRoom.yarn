@@ -1,0 +1,51 @@
+﻿title: livingRoom_enterDark
+---
+<<if !has_flag("living_room_lights_on")>>
+  Oh my god...
+  This house terrifies me in the dark.
+  What even is that?!
+  Where's the damn light switch?
+  <<load_scene "livingRoom_Lightswitch">>
+<<elseif has_flag("living_lights_justFlipped")>>
+  <<unset_flag "living_lights_justFlipped">>
+  Better.
+<<elseif has_flag("mable_scared") and !has_flag("mable_found") and !has_flag("mable_monologue")>>
+  It looks like Mable ran off.
+  She probably got scared by that creep.
+  I wonder where she went off to?
+  <<set_flag "mable_monologue">>
+<<elseif has_flag("mable_monologue") and !has_flag("mable_found")>>
+  Where has Mable ran off to?
+<<endif>>
+===
+
+title: livingRoom_lightSwitch
+---
+<<set_flag "living_room_lights_on">>
+<<set_flag "living_lights_justFlipped">>
+<<load_scene "livingRoom">>
+===
+
+title: livingRoom_bedroomDoor
+---
+<<load_scene "bedRoom">>
+===
+
+title: livingRoom_cat
+---
+<<if has_flag("mable_found")>>
+  Looks like Mable is feeling okay...
+  <<stop>>
+<<endif>>
+My beautiful cat, Mable.
+===
+
+title: livingRoom_kitchen
+---
+<<load_scene "kitchen">>
+===
+
+title: livingRoom_return
+---
+<<load_scene "livingRoomReverse">>
+===

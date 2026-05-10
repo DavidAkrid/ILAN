@@ -1,0 +1,108 @@
+﻿title: kitchen_enter
+---
+<<if !has_flag("kitchen_lights_on")>>
+  <<wait 1>>
+  <<set_flag "kitchen_lights_on">>
+  <<set_flag "trashcan_full">>
+  <<set_flag "food_in_freezer">>
+  <<set_flag "voicemail_waiting">>
+  -Click-
+  It's my kitchen.
+<<endif>>
+===
+
+title: kitchen_Trash
+---
+<<if has_flag("trashcan_full") and !has_flag("trashcan_tied")>>
+  This trash is getting full. I should take it out.
+  <<set_flag "trashcan_tied">>
+  <<stop>>
+<<elseif has_flag("trashcan_tied")>>
+  <<unset_flag "trashcan_full">>
+  <<set_flag "holding_trash">> 
+<<else>>
+  <<if has_flag ("holding_trash")>>
+    I usually take the trash out back, through the laundry room.
+    <<stop>>
+  <<endif>>
+  An empty trashcan.
+<<endif>>
+===
+
+title: kitchen_Phone
+---
+<<detour kitchen_TrashCheck>>
+<<if has_flag("voicemail_waiting")>>
+  Someone left a voicemail...
+  <<load_scene "kitchen_phone">>
+<<elseif has_flag("becky_calling")>>
+  Who could be calling at a time like this?
+<<else>>
+  This busted ass phone.
+<<endif>>
+===
+
+title: kitchen_Microwave
+---
+<<detour kitchen_TrashCheck>>
+<<if has_flag("has_frozen_food")>>
+  Putting the food in!
+  <<unset_flag "has_frozen_food">>
+  <<set_flag "food_in_microwave">>
+  <<start_timer "microwave_running" 10>>
+  <<stop>>
+<<elseif has_flag("microwave_running")>>
+  My food should be done soon.
+  <<stop>>
+<<elseif has_flag("food_in_microwave") and !has_flag("microwave_running")>>
+  It isn't great, but it's food...
+  <<unset_flag "food_in_microwave">>
+  <<stop>>
+<<endif>>
+Dis a microwave!
+You put stuff here to make it go warmer
+===
+
+title: kitchen_Fridge
+---
+<<detour kitchen_TrashCheck>>
+Brrr... It's cold in here!
+===
+
+title: kitchen_Window
+---
+It's waining outside!!!
+===
+
+title: kitchen_LaundryRoomDoor
+---
+<<load_scene "laundryRoom">>
+===
+
+title: kitchen_return
+---
+<<detour kitchen_TrashCheck>>
+<<load_scene "livingRoomReverse">>
+===
+
+title: kitchen_TrashCheck
+---
+<<if has_flag("holding_trash")>>
+  I should take the trash out back first.
+  <<stop>>
+<<endif>>
+===
+
+title: kitchen_Drawer
+---
+<<load_scene "kitchen_drawer">>
+===
+
+title: kitchen_Freezer
+---
+<<if !has_flag("food_in_freezer")>>
+  It's empty now.
+  <<stop>>
+<<endif>>
+<<load_scene "kitchen_freezer">>
+===

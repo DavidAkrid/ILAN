@@ -1,0 +1,10 @@
+﻿title: kitchen_drawer_flashlight
+---
+<<if has_flag("paranoid")>>
+  <<set_flag "has_flashlight">>
+  <<stop>>
+<<endif>>
+My trusty flashlight.
+I probably should get some other tools,
+now that I am living alone...
+===

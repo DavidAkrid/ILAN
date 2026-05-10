@@ -1,0 +1,46 @@
+﻿title: bedRoom_enter
+---
+<<if has_flag("mable_scared") and !has_flag("mable_found")>>
+  Mable likes to hide in my room...
+<<endif>>
+<<if !has_flag("bedroom_lights_on")>>
+  <<wait 1>>
+  <<set_flag "bedroom_lights_on">>
+  -Click-
+  It's my bedroom.
+  I should take off my coat.
+<<elseif !has_flag("coat_removed")>>
+  I should take off my coat.
+<<endif>>
+===
+
+title: bedRoom_return
+---
+<<load_scene "livingRoom">>
+===
+
+title: bedRoom_BathroomDoor
+---
+<<load_scene "bathRoom">>
+===
+
+title: bedRoom_ClosetDoor
+---
+<<load_scene "closet">>
+===
+
+title: bedRoom_UnderBed
+---
+<<load_scene "bedroom_underBed">>
+===
+
+title: bedRoom_Inspect
+---
+<<load_scene "bedRoom_inspect">>
+===
+
+title: bedRoom_Necklace
+---
+A beautiful necklace...
+It was given to me by someone...
+===

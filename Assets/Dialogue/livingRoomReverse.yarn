@@ -1,0 +1,54 @@
+﻿title: livingRoomReverse
+---
+This is an example of a Yarn Spinner script. Write your dialogue here!
+===
+
+title: livingRoomReverse_Return
+---
+<<load_scene "livingRoom">>
+===
+
+title: livingRoomReverse_frontDoor
+---
+I'm not going outside tonight...
+===
+
+title: livingRoomReverse_keys
+---
+My keys are a lot lighter these days.
+===
+
+title: livingRoomReverse_tv
+---
+I've had this TV since I was a girl.
+===
+
+title: livingRoomReverse_window
+---
+I really should get some curtains.
+You can see my whole house from outside...
+===
+
+title: livingRoomReverse_NoteID
+---
+What the...
+<<load_scene "livingRoomReverse_inspect">>
+===
+
+title: livingRoomReverse_LicenseView
+---
+This... is my driver's license...
+That creep from the bus stop must have kept it.
+<<set_flag "top_note_read">>
+===
+
+title: livingRoomReverse_NoteView
+---
+<<if !has_flag("note_opened")>>
+  <<set_flag "note_opened">>
+  <<stop>>
+<<endif>>
+I'm going to throw up...
+<<unset_flag "note_on_ground">>
+<<load_scene "livingRoomReverse">>
+===

@@ -1,0 +1,77 @@
+﻿title: laundryRoom_enter
+---
+<<if !has_flag("laundry_room_lights_on")>>
+  <<wait 1>>
+  <<set_flag "laundry_room_lights_on">>
+  -Click-
+  It's my laundry room.
+<<endif>>
+<<if has_flag("holding_trash")>>
+  I usually take my trash out the back door.
+<<endif>>
+<<if has_flag("laundry_door_open")>>
+<<set_flag "paranoid">>
+...
+I could have sworn I shut this hard enough.
+<<unset_flag "laundry_door_open">>
+<<unset_flag "mable_scared">>
+Unless...
+Someone opened this door?
+I better check just to be sure
+<<endif>>
+===
+
+title: laundryRoom_return
+---
+<<load_scene "kitchen">>
+===
+
+title: laundryRoom_dryer
+---
+<<if has_flag("dryer_open") and has_flag("paranoid")>>
+  ...
+  I don't even want to think about it...
+  <<unset_flag "dryer_open">>
+<<elseif has_flag("paranoid")>>
+  <<set_flag "dryer_open">>
+  These are my clothes.
+  <<unset_flag "dryer_open">>
+<<else>>
+  <<set_flag "dryer_open">>
+  Clean and dry clothes.
+  Ugh, I need to fold these soon.
+  <<unset_flag "dryer_open">>
+<<endif>>
+===
+
+title: laundryRoom_backdoor
+---
+<<if has_flag("holding_trash")>>
+  <<set_flag "laundry_door_open">>
+  I open the door and throw out the trash.
+  <<unset_flag "laundry_door_open">>
+  <<unset_flag "holding_trash">>
+  <<set_flag "note_on_ground">>
+  <<set_flag "mable_scared">>
+  CRASH!
+  What was that??
+  <<wait 1>>
+  <<set_flag "laundry_door_cracked">>
+  <<wait 0.5>>
+  Ugh, this door never stays shut.
+  <<unset_flag "laundry_door_cracked">>
+  <<wait 0.5>>
+  I better go check out that sound.
+  <<stop>>
+<<endif>>
+The door to my backyard.
+There's a grill and a garbage bin out there.
+===
+
+title: laundryRoom_creakOpen
+---
+<<set_flag "laundry_door_open">>
+<<set_flag "dryer_open">>
+-creeeak-
+What was that?
+===

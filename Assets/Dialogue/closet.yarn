@@ -1,0 +1,56 @@
+﻿title: closet_enter
+---
+<<if !has_flag("closet_lights_on")>>
+  <<wait 1>>
+  <<set_flag "closet_lights_on">>
+  -Click-
+  It's the closet.
+<<endif>>
+<<if has_flag("paranoid") and !has_flag("closet_searched")>>
+  <<if has_flag("has_flashlight")>>
+    Please, God, be empty...
+  <<else>>
+    Its too dark to be sure it's empty...
+  <<endif>>
+<<endif>>
+===
+
+title: closet_return
+---
+<<load_scene "bedRoom">>
+===
+
+title: closet_click
+---
+<<if !has_flag("closet_lights_burnt")>>
+  <<wait 0.25>>
+  <<set_flag "closet_lights_burnt">>
+  <<wait 0.5>>
+  Ahh!
+  I nearly had a heart attack.
+  That damn lightbulb.
+  I'll need to pick up another soon.
+  I fumble through the dark and place my coat on the hanger.
+  <<set_flag "coat_removed">>
+  <<if has_flag("mable_found")>>
+    <<jump laundryRoom_creakOpen>>
+  <<endif>>
+<<elseif has_flag("paranoid")>>
+  <<if has_flag("has_flashlight")>>
+    <<load_scene "closet_flashlight">>
+  <<else>>
+    It's too dark to see.
+    I need my flashlight.
+  <<endif>>
+<<else>>
+  It's filled with clothes and shoes.
+<<endif>>
+===
+
+title: closet_flashlightComplete
+---
+Nothing.
+Just clothes and shoes.
+<<set_flag "closet_searched">>
+<<load_scene "closet">>
+===

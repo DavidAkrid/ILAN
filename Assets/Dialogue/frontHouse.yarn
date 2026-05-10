@@ -1,0 +1,15 @@
+﻿title: front_House
+---
+The walk from the bus stop is so long...
+I need to get a car soon.
+Either way...
+It feels so good to be home. 
+...
+Damn, it looks like I forgot to leave a light on...
+===
+
+title: front_DoorUnlock
+---
+-click-
+<<load_scene "livingRoom">>
+===

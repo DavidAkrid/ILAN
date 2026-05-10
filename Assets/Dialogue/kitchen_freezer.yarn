@@ -1,0 +1,7 @@
+﻿title: kitchen_freezer_frozen_food
+---
+<<set_flag "has_frozen_food">>
+<<unset_flag "food_in_freezer">>
+You grabbed the microwave dinner.
+<<load_scene "kitchen">>
+===

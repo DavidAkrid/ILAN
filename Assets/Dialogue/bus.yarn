@@ -1,0 +1,30 @@
+﻿title: bus
+---
+I am on the bus.
+Long day working.
+Weee! Bus goes fast!
+Looks like my stop! Time to get off.
+<<load_scene "busStop">>
+===
+
+title: bus_Stop
+---
+<<if !has_flag("purse_game_complete")>>
+Whew! Almost Home!
+(I stumble getting off the bus...)
+(I fall to the ground, spilling my purse...)
+<<load_scene "purseGame">>
+<<else>>
+<<jump bus_StopCreep>>
+<<endif>>
+===
+
+
+title: bus_StopCreep
+---
+Stranger: Hey pretty lady ~
+Stranger: You dropped this...
+Yikes, this guy scares me..
+I better get out of here...
+<<load_scene "frontHouse">>
+===

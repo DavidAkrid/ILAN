@@ -1,0 +1,40 @@
+title: TrashCan
+---
+<<if has_flag("trashcan_seen") == false>>
+It's trash.
+I should probably take that out.
+.
+<<set_flag "trashcan_seen">>
+<<endif>>
+===
+
+title: Phone
+---
+<<if has_flag("voicemail_heard") == false>>
+Someone left a voicemail...
+*Hey, its Mom.*
+*Just calling to say...*
+*I love you!*
+-click-
+I should give her a call sometime...
+<<set_flag "voicemail_heard">>
+<<else>>
+This busted ass phone.
+<<endif>>
+===
+
+title: Microwave
+---
+Dis a microwave!
+You put stuff here to make it go warmer
+===
+
+title: Fridge
+---
+Brrr... It's cold in here!
+===
+
+title: Window
+---
+It's waining outside!!!
+===

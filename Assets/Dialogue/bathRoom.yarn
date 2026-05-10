@@ -1,0 +1,29 @@
+﻿title: bathRoom_enter
+---
+<<if !has_flag("bathroom_lights_on")>>
+  <<wait 1>>
+  <<set_flag "bathroom_lights_on">>
+  -Click-
+  It's the bathroom.
+<<endif>>
+===
+
+title: bathRoom_shower
+---
+<<if has_flag("paranoid")>>
+  ...
+  <<load_scene "emptyShower">>
+<<else>>
+  My shower.
+<<endif>>
+===
+
+title: bathRoom_shower_check
+---
+Thank goodness...
+===
+
+title: bathRoom_return
+---
+<<load_scene "bedRoom">>
+===

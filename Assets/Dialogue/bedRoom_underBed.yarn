@@ -1,0 +1,12 @@
+﻿title: bedRoom_checkUnderBed
+---
+<<if has_flag("mable_scared")>>
+  <<wait 1.0>>
+  ~mew~
+  <<set_flag "mable_found">>
+  <<if has_flag("coat_removed")>>
+    <<wait 1.0>>
+    <<jump laundryRoom_creakOpen>>
+  <<endif>>
+<<endif>>
+===
