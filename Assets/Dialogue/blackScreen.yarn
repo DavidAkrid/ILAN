@@ -1,0 +1,18 @@
+﻿title: blackScreen
+---
+//out with friends
+<<if has_flag("intent_to_leave")>>
+  Yay! Jenny's here!
+  Party!
+  Drinks!
+  See you next time!
+  <<unset_flag "intent_to_leave">>
+  <<set_flag "broken_house">>
+  <<load_scene_fade "frontHouse">>
+<<elseif has_flag("game_over")>>
+  The End.
+<<else>>
+ How did you get here?
+ You're not supposed to be here yet.
+<<endif>>
+===

@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/bedRoom_inspect.unity
     guid: 4e526142dc67f384aa73ad9f421ba756
   - enabled: 1
+    path: Assets/Scenes/blackScreen.unity
+    guid: 7cf6b85c90b435a4c81d753db10c7214
+  - enabled: 1
     path: Assets/Scenes/frontDoorDisturbed.unity
     guid: f6a07a39eadf6234e97fc8054f0bebc2
   - enabled: 1

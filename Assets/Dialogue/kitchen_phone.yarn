@@ -8,6 +8,7 @@
   <<unset_flag "phone_ringing">>
   <<set_flag "intent_to_leave">>
   Jeez, getting out of here sounds just fine to me.
+  <<load_scene "kitchen">>
 <<elseif has_flag("voicemail_waiting")>>
   *Hey, its Mom.*
   *Just calling to say...*
@@ -15,5 +16,6 @@
   -click-
   I should give her a call sometime...
   <<unset_flag "voicemail_waiting">>
+  <<load_scene "kitchen">>
 <<endif>>
 ===

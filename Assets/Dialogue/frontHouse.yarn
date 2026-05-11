@@ -1,15 +1,27 @@
 ﻿title: front_House
 ---
-The walk from the bus stop is so long...
-I need to get a car soon.
-Either way...
-It feels so good to be home. 
-...
-Damn, it looks like I forgot to leave a light on...
+<<if !has_flag("broken_house")>>
+  The walk from the bus stop is so long...
+  I need to get a car soon.
+  Either way...
+  It feels so good to be home. 
+  ...
+  Damn, it looks like I forgot to leave a light on...
+<<else>>
+  What the hell?
+<<endif>>
 ===
 
 title: front_DoorUnlock
 ---
--click-
-<<load_scene "livingRoom">>
+<<if !has_flag("broken_house")>>
+  -click-
+  <<load_scene_fade "livingRoom">>
+<<else>>
+  <<set_flag "inspect_broken_door">>
+  Someone has broken down my door...
+  I'm calling the police and staying with my mom...
+  <<set_flag "game_over">>
+  <<load_scene_fade "blackScreen">>
+<<endif>>
 ===

@@ -299,6 +299,7 @@ MonoBehaviour:
   - {fileID: 117456105}
   - {fileID: 1736983326}
   - {fileID: 1526552948}
+  yarnNode: bus_Stop_PurseGrabbed
 --- !u!4 &236788172
 Transform:
   m_ObjectHideFlags: 0
@@ -851,7 +852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1370683032}
   clipName: HandAnimation
-  nextScene: BusStop
   stuffAnimator: {fileID: 782941776}
   stuffClipName: StuffAnimation
 --- !u!1 &1526552948

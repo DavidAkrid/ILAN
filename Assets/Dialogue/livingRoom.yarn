@@ -49,8 +49,14 @@ title: livingRoom_return
 title: catTree_Mable
 ---
 <<if has_flag("mable_found")>>
-  Looks like Mable is feeling okay...
+  <<if has_flag("mable_ok")>>
+    Looks like Mable is feeling okay...
+    set_flag("mable_ok")
+  <<endif>>
   ~mew~
+<<elseif !has_flag("mable_intro")>>
+  My beautiful cat, Mable.
+  <<set_flag "mable_intro">>
 <<else>>
 ~Mew~
 <<endif>>

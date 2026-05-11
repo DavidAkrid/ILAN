@@ -7,7 +7,7 @@ title: livingRoomReverse_frontDoor
 ---
 <<if has_flag("intent_to_leave")>>
   <<if has_flag("keys_obtained") and has_flag("coat_obtained")>>
-    I'm out.
+    <<load_scene_fade "blackScreen">>
   <<else>>
     I'm not ready.
   <<endif>>
@@ -16,6 +16,7 @@ title: livingRoomReverse_frontDoor
     <<load_scene "openFrontDoor">>
   <<elseif has_flag("front_door_menu")>>
     What the hell was that?
+    Was somebody trying to get inside?
   <<else>>
     I'm making sure this stays locked.
   <<endif>>
@@ -48,7 +49,7 @@ title: livingRoomReverse_window
 ---
 <<if has_flag("front_door_complete")>>
   <<if has_flag("front_door_menu")>>
-    I don't see anyone out there.
+    Whoever it was is gone now...
     <<set_flag "window_check">>
   <<else>>
     I really need some curtains.
@@ -86,6 +87,7 @@ I'm going to throw up...
 title: livingRoomReverse_Starter
 ---
 <<if has_flag("front_door_disturbed")>>
+  Wait a minute...
   <<load_scene "frontDoorDisturbed">>
 <<elseif has_flag("intent_to_leave")>>
   <<if !has_flag("keys_obtained") or !has_flag("coat_obtained")>>

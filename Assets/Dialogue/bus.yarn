@@ -3,8 +3,9 @@
 I am on the bus.
 Long day working.
 Weee! Bus goes fast!
+<<set_flag "bus_stopped">>
 Looks like my stop! Time to get off.
-<<load_scene "busStop">>
+<<load_scene_fade "busStop">>
 ===
 
 title: bus_Stop
@@ -13,7 +14,7 @@ title: bus_Stop
 Whew! Almost Home!
 (I stumble getting off the bus...)
 (I fall to the ground, spilling my purse...)
-<<load_scene "purseGame">>
+<<load_scene_fade "purseGame">>
 <<else>>
 <<jump bus_StopCreep>>
 <<endif>>
@@ -26,5 +27,12 @@ Stranger: Hey pretty lady ~
 Stranger: You dropped this...
 Yikes, this guy scares me..
 I better get out of here...
-<<load_scene "frontHouse">>
+<<load_scene_fade "frontHouse">>
+===
+
+title: bus_Stop_PurseGrabbed
+---
+<<wait 1.5>>
+What the...
+<<load_scene "busStop">>
 ===
