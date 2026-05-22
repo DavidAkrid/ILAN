@@ -1,14 +1,22 @@
 ﻿title: kitchen_enter
 ---
+<<play_sound "kitchenTone">>
+<<play_sound "fridge">>
+<<if !has_flag("sameRoom")>>
+  //<<play_sound "woodenFootsteps">>
+<<else>>
+  <<unset_flag "sameRoom">>
+<<endif>>
 <<if !has_flag("kitchen_lights_on")>>
   <<wait 1>>
   <<set_flag "kitchen_lights_on">>
   <<set_flag "trashcan_full">>
   <<set_flag "food_in_freezer">>
   <<set_flag "voicemail_waiting">>
-  -Click-
+  <<play_sound "lightswitch">>
   It's my kitchen.
 <<endif>>
+
 ===
 
 title: kitchen_Trash
@@ -16,9 +24,11 @@ title: kitchen_Trash
 <<if has_flag("trashcan_full") and !has_flag("trashcan_tied")>>
   This trash is getting full. I should take it out.
   <<set_flag "trashcan_tied">>
+  <<play_sound "trashBagged">>
   <<stop>>
-<<elseif has_flag("trashcan_tied")>>
+<<elseif has_flag("trashcan_tied") and !has_flag("holding_trash")>>
   <<unset_flag "trashcan_full">>
+  <<play_sound "trashTaken">>
   <<set_flag "holding_trash">> 
 <<else>>
   <<if has_flag ("holding_trash")>>
@@ -47,15 +57,20 @@ title: kitchen_Microwave
 ---
 <<detour kitchen_TrashCheck>>
 <<if has_flag("has_frozen_food")>>
+  <<play_sound "microwaveOpen">>
   Putting the food in!
   <<unset_flag "has_frozen_food">>
+  <<play_sound "microwave">>
+  <<wait 1>>
   <<set_flag "food_in_microwave">>
-  <<start_timer "microwave_running" 10>>
+  <<start_timer "microwave_running" 30>>
   <<stop>>
 <<elseif has_flag("microwave_running")>>
   My food should be done soon.
   <<stop>>
 <<elseif has_flag("food_in_microwave") and !has_flag("microwave_running")>>
+  <<play_sound "microwaveOpen">>
+  <<wait 1>>
   It isn't great, but it's food...
   <<unset_flag "food_in_microwave">>
   <<stop>>
@@ -77,12 +92,17 @@ It's waining outside!!!
 
 title: kitchen_LaundryRoomDoor
 ---
+<<play_sound "laundryRoomDoor">>
+<<stop_sound "fridge">>
+<<stop_sound "kitchenTone">>
 <<load_scene "laundryRoom">>
 ===
 
 title: kitchen_return
 ---
 <<detour kitchen_TrashCheck>>
+<<stop_sound "kitchenTone">>
+<<stop_sound "fridge">>
 <<load_scene "livingRoomReverse">>
 ===
 
@@ -105,5 +125,8 @@ title: kitchen_Freezer
   It's empty now.
   <<stop>>
 <<endif>>
+<<stop_sound "kitchenTone">>
+<<stop_sound "fridge">>
+<<play_sound "freezer">>
 <<load_scene "kitchen_freezer">>
 ===

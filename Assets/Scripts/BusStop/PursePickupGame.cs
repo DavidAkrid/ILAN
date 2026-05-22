@@ -22,7 +22,7 @@ public class PursePickupGame : MonoBehaviour
     public void ItemPickedUp(GameObject item)
     {
         item.SetActive(false);
-
+        AudioManager.PlaySound(Random.value < 0.5f ? "Pickup1" : "Pickup2", Random.Range(0.9f, 1.1f));
         foreach (GameObject i in items)
             if (i.activeSelf) return;
 

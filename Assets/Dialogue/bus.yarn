@@ -1,36 +1,48 @@
 ﻿title: bus
+position: -13,-217
 ---
+<<play_sound "busAmbience">>
 I am on the bus.
 Long day working.
 Weee! Bus goes fast!
 <<set_flag "bus_stopped">>
+<<play_sound "busDoor">>
 Looks like my stop! Time to get off.
+<<stop_sound "busAmbience">>
 <<load_scene_fade "busStop">>
 ===
 
 title: bus_Stop
+position: -248,33
 ---
+<<play_sound "busStopAmbience">>
+
 <<if !has_flag("purse_game_complete")>>
-Whew! Almost Home!
-(I stumble getting off the bus...)
-(I fall to the ground, spilling my purse...)
-<<load_scene_fade "purseGame">>
+  <<play_sound "busStopSteps">>
+  Whew! Almost Home!
+  (I stumble getting off the bus...)
+  <<play_sound "busStopFall">>
+  <<load_scene_fade "purseGame">>
 <<else>>
-<<jump bus_StopCreep>>
+  <<jump bus_StopCreep>>
 <<endif>>
 ===
 
 
 title: bus_StopCreep
+position: -59,221
 ---
+<<play_sound "creepAmbience">>
 Stranger: Hey pretty lady ~
 Stranger: You dropped this...
 Yikes, this guy scares me..
 I better get out of here...
+<<stop_sound "busStopAmbience">>
 <<load_scene_fade "frontHouse">>
 ===
 
 title: bus_Stop_PurseGrabbed
+position: 246,30
 ---
 <<wait 1.5>>
 What the...

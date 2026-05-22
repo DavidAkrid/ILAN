@@ -2,12 +2,14 @@
 ---
 //out with friends
 <<if has_flag("intent_to_leave")>>
+  <<play_sound "barAmbience">>
   Yay! Jenny's here!
   Party!
   Drinks!
   See you next time!
   <<unset_flag "intent_to_leave">>
   <<set_flag "broken_house">>
+  <<stop_sound "barAmbience">>
   <<load_scene_fade "frontHouse">>
 <<elseif has_flag("game_over")>>
   The End.

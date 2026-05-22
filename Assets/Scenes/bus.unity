@@ -250,6 +250,59 @@ MonoBehaviour:
   - flag: bus_stopped
     animationState: BusStopped
     invert: 0
+--- !u!1 &701386207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701386209}
+  - component: {fileID: 701386208}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &701386208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701386207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: busAmbience
+    clip: {fileID: 8300000, guid: 57f2a88d5c7eaac4da76962ce29e0c8c, type: 3}
+    volume: 1
+    loop: 1
+  - name: busDoor
+    clip: {fileID: 8300000, guid: aa57bad0c2325054a9d017171d4837e6, type: 3}
+    volume: 1
+    loop: 0
+--- !u!4 &701386209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701386207}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2713379, y: 0.30531633, z: -0.036155574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1108778561
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +314,7 @@ GameObject:
   - component: {fileID: 1108778564}
   - component: {fileID: 1108778563}
   - component: {fileID: 1108778562}
+  - component: {fileID: 1108778565}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -280,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1390e1818afbf8489e772442a8d35ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 0.5
 --- !u!114 &1108778563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +363,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108778565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108778561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40f3eb606f88a94584dc45da94aaebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalClips:
+  - name: KeyPressText
+    clip: {fileID: 8300000, guid: 20bc760cf7526c541b2036e48b6fa7ce, type: 3}
+    volume: 0.576
+    loop: 0
+  - name: NextMessage
+    clip: {fileID: 8300000, guid: 7b85198d7776a7a4187e0af2ff22dca1, type: 3}
+    volume: 0.727
+    loop: 0
 --- !u!1 &1350651072
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +417,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: bus
   dialogueRunner: {fileID: 1596862754}
+  clickSound: 
   autoStart: 1
 --- !u!4 &1350651074
 Transform:
@@ -692,3 +769,4 @@ SceneRoots:
   - {fileID: 4386007}
   - {fileID: 1350651074}
   - {fileID: 1108778564}
+  - {fileID: 701386209}

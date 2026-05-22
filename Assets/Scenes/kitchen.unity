@@ -364,6 +364,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: kitchen_enter
   dialogueRunner: {fileID: 805080143}
+  clickSound: 
   autoStart: 1
 --- !u!4 &434673558
 Transform:
@@ -1058,6 +1059,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2011496736779193508, guid: 468f48fa211696f478b5a54c24e76bb9, type: 3}
   m_PrefabInstance: {fileID: 1554925180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586408519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586408521}
+  - component: {fileID: 1586408520}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586408520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586408519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: kitchenTone
+    clip: {fileID: 8300000, guid: 5d5aa647db2f84d4995648ffd628e084, type: 3}
+    volume: 1
+    loop: 1
+  - name: woodenFootsteps
+    clip: {fileID: 8300000, guid: b5efed7d1d79fa641bc40c16b1289440, type: 3}
+    volume: 0.386
+    loop: 0
+  - name: fridge
+    clip: {fileID: 8300000, guid: e1947265a456490438652792079b7d15, type: 3}
+    volume: 0.608
+    loop: 1
+  - name: freezer
+    clip: {fileID: 8300000, guid: 091b38b0477e5cc4d84e7b44e789eb68, type: 3}
+    volume: 0.608
+    loop: 1
+  - name: microwave
+    clip: {fileID: 8300000, guid: 50ae96cb211770640b2e338f83637e17, type: 3}
+    volume: 0.39
+    loop: 0
+  - name: lightswitch
+    clip: {fileID: 8300000, guid: d1e0e6285dd658a43890eee606c97440, type: 3}
+    volume: 0.818
+    loop: 0
+  - name: microwaveOpen
+    clip: {fileID: 8300000, guid: 42750b05a507de944b073728b1d78a73, type: 3}
+    volume: 0.39
+    loop: 0
+  - name: trashBagged
+    clip: {fileID: 8300000, guid: 40a8d7c5291549044ad7cb2da514b8b7, type: 3}
+    volume: 0.73
+    loop: 0
+  - name: laundryRoomDoor
+    clip: {fileID: 8300000, guid: 7e96ac033f22b1b479c92e73b952e521, type: 3}
+    volume: 0.73
+    loop: 0
+  - name: trashTaken
+    clip: {fileID: 8300000, guid: d38666dd627b6e644a830ae83950535e, type: 3}
+    volume: 0.73
+    loop: 0
+--- !u!4 &1586408521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586408519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1641236755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1711,3 +1797,4 @@ SceneRoots:
   - {fileID: 1381309118}
   - {fileID: 610812179}
   - {fileID: 40390361}
+  - {fileID: 1586408521}

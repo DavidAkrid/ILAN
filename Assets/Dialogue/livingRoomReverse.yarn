@@ -7,16 +7,17 @@ title: livingRoomReverse_frontDoor
 ---
 <<if has_flag("intent_to_leave")>>
   <<if has_flag("keys_obtained") and has_flag("coat_obtained")>>
+    <<stop_sound "livingRoomTone">>
+    <<stop_sound "clockSound">>
     <<load_scene_fade "blackScreen">>
   <<else>>
     I'm not ready.
   <<endif>>
 <<elseif has_flag("front_door_complete")>>
-  <<if has_flag("window_check")>>
-    <<load_scene "openFrontDoor">>
-  <<elseif has_flag("front_door_menu")>>
+  <<if has_flag("front_door_menu")>>
     What the hell was that?
     Was somebody trying to get inside?
+    <<load_scene "openFrontDoor">>
   <<else>>
     I'm making sure this stays locked.
   <<endif>>
@@ -32,6 +33,7 @@ title: livingRoomReverse_keys
     I have my keys.
     <<stop>>
   <<else>>
+    <<play_sound "keys">>
     I pick up my keys
     <<set_flag "keys_obtained">>
     <<stop>>
@@ -62,14 +64,18 @@ You can see my whole house from outside...
 
 title: livingRoomReverse_NoteID
 ---
+<<wait 0.1>>
 What the...
+<<play_sound "noteInteract">>
 <<load_scene "livingRoomReverse_inspect">>
 ===
 
 title: livingRoomReverse_LicenseView
 ---
+<<wait 0.1>>
 This... is my driver's license...
 That creep from the bus stop must have kept it.
+<<play_sound "licenseRead">>
 <<set_flag "top_note_read">>
 ===
 
@@ -77,10 +83,12 @@ title: livingRoomReverse_NoteView
 ---
 <<if !has_flag("note_opened")>>
   <<set_flag "note_opened">>
+  <<play_sound "unfoldPaper">>
   <<stop>>
 <<endif>>
 I'm going to throw up...
 <<unset_flag "note_on_ground">>
+<<play_sound "noteInteract">>
 <<load_scene "livingRoomReverse">>
 ===
 
@@ -99,11 +107,13 @@ title: livingRoomReverse_Starter
 title: livingRoomReversed_frontDoorDisturbed_Starter
 ---
 // need to remove! DEBUG
+<<play_sound "doorJiggle">>
 <<set_flag "front_door_disturbed">>
 <<wait 3>>
 ...
 <<unset_flag "front_door_disturbed">>
 <<set_flag "front_door_menu">>
+<<stop_sound "doorJiggle">>
 <<wait 1>>
 They stopped...
 <<set_flag "front_door_complete">>
@@ -113,9 +123,11 @@ They stopped...
 title: livingRoomReverse_MandarinCafe
 ---
 You've gotta be joking me.
+<<play_sound "unfoldPaper">>
 <<unset_flag "front_door_menu">>
 <<unset_flag "window_check">>
 That gave me a heart attack.
 <<set_flag "phone_ringing">>
+<<play_sound "phoneRinging">>
 <<load_scene "livingRoomReverse">>
 ===

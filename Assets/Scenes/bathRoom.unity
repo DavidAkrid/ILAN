@@ -272,6 +272,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: bathRoom_enter
   dialogueRunner: {fileID: 1741095363}
+  clickSound: 
   autoStart: 1
 --- !u!4 &792866474
 Transform:
@@ -609,6 +610,63 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1436560924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436560926}
+  - component: {fileID: 1436560925}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1436560925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436560924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: bathroomTone
+    clip: {fileID: 8300000, guid: 85473a5ca083b8146a8046419217747d, type: 3}
+    volume: 1
+    loop: 1
+  - name: showerCurtain
+    clip: {fileID: 8300000, guid: 4ff1ac8a5d29ab1418acc27b22e9a3ba, type: 3}
+    volume: 0.89
+    loop: 0
+  - name: woodenFootsteps
+    clip: {fileID: 8300000, guid: b5efed7d1d79fa641bc40c16b1289440, type: 3}
+    volume: 0.89
+    loop: 0
+--- !u!4 &1436560926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436560924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1741095362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -771,3 +829,4 @@ SceneRoots:
   - {fileID: 792866474}
   - {fileID: 569340327}
   - {fileID: 665441453}
+  - {fileID: 1436560926}

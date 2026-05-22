@@ -272,6 +272,75 @@ MonoBehaviour:
   states: []
   enableFlag: 
   disableFlag: has_flashlight
+--- !u!1001 &572381215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 951833285882954549, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: autoStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 951833285882954549, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 631962100}
+    - target: {fileID: 951833285882954549, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: dialogue.nodeName
+      value: kitchen_drawer_enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033776386536506706, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_Name
+      value: DialogueStarter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.52086216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.029524475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.031511724
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120696516144847938, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9146bae1c73c9bd4cb899c71def8b7a7, type: 3}
 --- !u!1001 &631962099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,6 +588,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: kitchen_drawer_flashlight
   dialogueRunner: {fileID: 631962100}
+  clickSound: 
   autoStart: 0
 --- !u!1 &788824992
 GameObject:
@@ -744,6 +814,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1313121616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313121618}
+  - component: {fileID: 1313121617}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1313121617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313121616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: drawerOpen
+    clip: {fileID: 8300000, guid: 906a5ff870ee61e42b78fd18b168fcaf, type: 3}
+    volume: 1
+    loop: 0
+  - name: drawerClose
+    clip: {fileID: 8300000, guid: 7410e4fd3c991684b96fe02ab4b9277f, type: 3}
+    volume: 1
+    loop: 0
+  - name: flashlightGrab
+    clip: {fileID: 8300000, guid: f7d1cfbe9ed61f84fa7125da67a8fe78, type: 3}
+    volume: 1
+    loop: 0
+--- !u!4 &1313121618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313121616}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1709478893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 631962100}
     - target: {fileID: 564998923983271533, guid: 73472238896f6774a94792df439d792c, type: 3}
       propertyPath: dialogue.nodeName
-      value: livingRoom_kitchen
+      value: kitchen_drawer_exit
       objectReference: {fileID: 0}
     - target: {fileID: 6784961543203437176, guid: 73472238896f6774a94792df439d792c, type: 3}
       propertyPath: m_Name
@@ -818,3 +945,5 @@ SceneRoots:
   - {fileID: 1150067909}
   - {fileID: 1709478893}
   - {fileID: 413967061}
+  - {fileID: 1313121618}
+  - {fileID: 572381215}

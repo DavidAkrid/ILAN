@@ -17,6 +17,8 @@ public class HandAnimation : MonoBehaviour
             stuffAnimator.enabled = false;
     }
 
+    public void PlayAnimationSound(string name) => AudioManager.PlaySound(name);
+
     public void Play()
     {
         gameObject.SetActive(true);

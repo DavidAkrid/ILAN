@@ -5,6 +5,7 @@ public class Hotspot : MonoBehaviour
 {
     [SerializeField] DialogueReference dialogue = new();
     [SerializeField] private DialogueRunner dialogueRunner;
+    [SerializeField] private string clickSound;
     public bool autoStart = false;
 
     void OnValidate()
@@ -28,6 +29,7 @@ public class Hotspot : MonoBehaviour
     {
         if (dialogueRunner.IsDialogueRunning) return;
         if (!dialogue.IsValid) return;
+        if (!string.IsNullOrEmpty(clickSound)) AudioManager.PlaySound(clickSound);
         dialogueRunner.StartDialogue(dialogue.nodeName);
     }
 }

@@ -201,6 +201,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2011496736779193508, guid: 468f48fa211696f478b5a54c24e76bb9, type: 3}
   m_PrefabInstance: {fileID: 5256058}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &319528055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319528057}
+  - component: {fileID: 319528056}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &319528056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319528055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: bedroomTone
+    clip: {fileID: 8300000, guid: 5d5aa647db2f84d4995648ffd628e084, type: 3}
+    volume: 1
+    loop: 1
+  - name: closetBathroomDoor
+    clip: {fileID: 8300000, guid: f064bfb96f405c540928c0f32cf14ebc, type: 3}
+    volume: 1
+    loop: 0
+  - name: necklace
+    clip: {fileID: 8300000, guid: 07b5bd0cae8329148895c66e31061cc4, type: 3}
+    volume: 0.897
+    loop: 0
+--- !u!4 &319528057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319528055}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &451094877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,6 +858,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: bedRoom_enter
   dialogueRunner: {fileID: 724085984}
+  clickSound: 
   autoStart: 1
 --- !u!4 &1551738489
 Transform:
@@ -1016,3 +1074,4 @@ SceneRoots:
   - {fileID: 724085983}
   - {fileID: 451094877}
   - {fileID: 547602452}
+  - {fileID: 319528057}

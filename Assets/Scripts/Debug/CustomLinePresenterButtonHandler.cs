@@ -17,11 +17,12 @@ namespace Yarn.Unity
     public class CustomLinePresenterButtonHandler : ActionMarkupHandler
     {
         [SerializeField] DialogueRunner? dialogueRunner;
-
         [SerializeField] GameObject? arrowIndicator;
+        [SerializeField] private float typingSoundCooldown = 2f;
 
         private bool lineComplete = false;
         private bool isShowingLine = false;
+        private float lastTypingSoundTime = -1f;
 
         void Update()
         {
@@ -34,6 +35,7 @@ namespace Yarn.Unity
             }
             else
             {
+                AudioManager.PlaySound("NextMessage", Random.Range(0.95f, 1.05f), Random.Range(0.8f, 1f));
                 dialogueRunner?.RequestNextLine();
             }
         }
@@ -52,6 +54,11 @@ namespace Yarn.Unity
 
         public override YarnTask OnCharacterWillAppear(int currentCharacterIndex, MarkupParseResult line, CancellationToken cancellationToken)
         {
+            if (Time.time - lastTypingSoundTime >= typingSoundCooldown)
+            {
+                AudioManager.PlaySound("KeyPressText", Random.Range(0.85f, 1.15f), Random.Range(0.7f, 1f));
+                lastTypingSoundTime = Time.time;
+            }
             return YarnTask.CompletedTask;
         }
 

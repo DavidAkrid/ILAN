@@ -1,12 +1,16 @@
 ﻿title: bedRoom_enter
 ---
+<<play_sound "bedroomTone">>
+<<wait 0.25>>
+//<<play_sound "carpetFootsteps">>
 <<if has_flag("mable_scared") and !has_flag("mable_found")>>
   Mable likes to hide in my room...
 <<endif>>
 <<if !has_flag("bedroom_lights_on")>>
-  <<wait 1>>
+  <<wait 1.5>>
   <<set_flag "bedroom_lights_on">>
-  -Click-
+  <<play_sound "lightswitch">>
+  <<wait 0.5>>
   It's my bedroom.
   I should take off my coat.
 <<endif>>
@@ -18,16 +22,21 @@ title: bedRoom_return
   I should take off my coat.
   <<stop>>
 <<endif>>
+<<stop_sound "bedroomTone">>
 <<load_scene "livingRoom">>
 ===
 
 title: bedRoom_BathroomDoor
 ---
+<<stop_sound "bedroomTone">>
+<<play_sound "closetBathroomDoor">>
 <<load_scene "bathRoom">>
 ===
 
 title: bedRoom_ClosetDoor
 ---
+<<stop_sound "bedroomTone">>
+<<play_sound "closetBathroomDoor">>
 <<load_scene "closet">>
 ===
 
@@ -38,6 +47,7 @@ title: bedRoom_UnderBed
 
 title: bedRoom_Inspect
 ---
+<<play_sound "necklace">>
 <<load_scene "bedRoom_inspect">>
 ===
 

@@ -2,9 +2,21 @@
 ---
 <<if has_flag("paranoid")>>
   <<set_flag "has_flashlight">>
+  <<play_sound "flashlightGrab">>
   <<stop>>
 <<endif>>
 My trusty flashlight.
 I probably should get some other tools,
 now that I am living alone...
+===
+
+title: kitchen_drawer_exit
+---
+<<play_sound "drawerClose">>
+<<jump livingRoom_kitchen>>
+===
+
+title: kitchen_drawer_enter
+---
+<<play_sound "drawerOpen">>
 ===

@@ -3,5 +3,7 @@
 <<set_flag "has_frozen_food">>
 <<unset_flag "food_in_freezer">>
 You grabbed the microwave dinner.
+<<stop_sound "freezer">>
+<<set_flag "sameRoom">>
 <<load_scene "kitchen">>
 ===

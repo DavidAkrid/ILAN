@@ -119,6 +119,87 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &221049171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221049173}
+  - component: {fileID: 221049172}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &221049172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221049171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: livingRoomTone
+    clip: {fileID: 8300000, guid: ac16d291507d0ec44b9ef523fa89d758, type: 3}
+    volume: 1
+    loop: 1
+  - name: clockSound
+    clip: {fileID: 8300000, guid: 03a595e82f33993409b631ea8edc7a66, type: 3}
+    volume: 0.126
+    loop: 1
+  - name: bedroomDoorMain
+    clip: {fileID: 8300000, guid: 7e96ac033f22b1b479c92e73b952e521, type: 3}
+    volume: 0.126
+    loop: 0
+  - name: phoneRinging
+    clip: {fileID: 8300000, guid: d93510f4fd87add468817db53fa15963, type: 3}
+    volume: 0.278
+    loop: 1
+  - name: noteInteract
+    clip: {fileID: 8300000, guid: 9085d23c217a1f24aaf9a82fdbbf64d3, type: 3}
+    volume: 0.278
+    loop: 0
+  - name: licenseRead
+    clip: {fileID: 8300000, guid: c3f0efe43e4fb454e899a60b104c9272, type: 3}
+    volume: 0.278
+    loop: 0
+  - name: unfoldPaper
+    clip: {fileID: 8300000, guid: f45f9fcac982c0e4f8073f60c6760dcc, type: 3}
+    volume: 0.278
+    loop: 0
+  - name: keys
+    clip: {fileID: 8300000, guid: 03793a02f00bbef47b461a45bdee8fb6, type: 3}
+    volume: 0.278
+    loop: 0
+  - name: doorJiggle
+    clip: {fileID: 8300000, guid: 9dff2621ec4301f43a8ad881133b2ecc, type: 3}
+    volume: 0.278
+    loop: 1
+--- !u!4 &221049173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221049171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479615130
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +369,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: livingRoomReverse_NoteID
   dialogueRunner: {fileID: 549889586}
+  clickSound: 
   autoStart: 0
 --- !u!1001 &498196524
 PrefabInstance:
@@ -1377,3 +1459,4 @@ SceneRoots:
   - {fileID: 882877351}
   - {fileID: 479615132}
   - {fileID: 659443593}
+  - {fileID: 221049173}

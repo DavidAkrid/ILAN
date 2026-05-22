@@ -1,5 +1,8 @@
 ﻿title: front_House
 ---
+<<play_sound "OutsideHouseAmbience">>
+<<play_sound "BusStopSteps">>
+<<wait 1>>
 <<if !has_flag("broken_house")>>
   The walk from the bus stop is so long...
   I need to get a car soon.
@@ -15,7 +18,10 @@
 title: front_DoorUnlock
 ---
 <<if !has_flag("broken_house")>>
-  -click-
+  <<play_sound "Deadbolt">>
+  <<play_sound "frontDoor">>
+  <<wait 1>>
+  <<stop_sound "OutsideHouseAmbience">>
   <<load_scene_fade "livingRoom">>
 <<else>>
   <<set_flag "inspect_broken_door">>

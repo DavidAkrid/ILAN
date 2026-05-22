@@ -1,9 +1,10 @@
 ﻿title: laundryRoom_enter
 ---
+<<play_sound "laundryTone">>
 <<if !has_flag("laundry_room_lights_on")>>
   <<wait 1>>
   <<set_flag "laundry_room_lights_on">>
-  -Click-
+  <<play_sound "lightswitch">>
   It's my laundry room.
 <<endif>>
 <<if has_flag("holding_trash")>>
@@ -14,6 +15,7 @@
 ...
 I could have sworn I shut this hard enough.
 <<unset_flag "laundry_door_open">>
+<<play_sound "backdoorClose">>
 <<unset_flag "mable_scared">>
 Unless...
 Someone opened this door?
@@ -23,6 +25,7 @@ I better check just to be sure
 
 title: laundryRoom_return
 ---
+<<stop_sound "laundryTone">>
 <<load_scene "kitchen">>
 ===
 
@@ -32,15 +35,20 @@ title: laundryRoom_dryer
   ...
   I don't even want to think about it...
   <<unset_flag "dryer_open">>
+  <<play_sound "dryerClose">>
 <<elseif has_flag("paranoid")>>
   <<set_flag "dryer_open">>
+  <<play_sound "dryerOpen">>
   These are my clothes.
   <<unset_flag "dryer_open">>
+  <<play_sound "dryerClose">>
 <<else>>
   <<set_flag "dryer_open">>
+  <<play_sound "dryerOpen">>
   Clean and dry clothes.
   Ugh, I need to fold these soon.
   <<unset_flag "dryer_open">>
+  <<play_sound "dryerClose">>
 <<endif>>
 ===
 
@@ -48,18 +56,28 @@ title: laundryRoom_backdoor
 ---
 <<if has_flag("holding_trash")>>
   <<set_flag "laundry_door_open">>
+  <<play_sound "backdoorOpen">>
   I open the door and throw out the trash.
+  <<play_sound "throwOutTrash">>
+  <<wait 1>>
   <<unset_flag "laundry_door_open">>
+  <<play_sound "backdoorClose">>
   <<unset_flag "holding_trash">>
   <<set_flag "note_on_ground">>
   <<set_flag "mable_scared">>
-  CRASH!
+  <<wait 1>>
+  <<play_sound "paperSlam">>
+  <<wait 0.5>>
+  <<play_sound "catMeow">>
+  <<wait 1>>
   What was that??
   <<wait 1>>
   <<set_flag "laundry_door_cracked">>
+  <<play_sound "doorCreak">>
   <<wait 0.5>>
   Ugh, this door never stays shut.
   <<unset_flag "laundry_door_cracked">>
+  <<play_sound "backdoorClose">>
   <<wait 0.5>>
   I better go check out that sound.
   <<stop>>
@@ -70,9 +88,10 @@ There's a grill and a garbage bin out there.
 
 title: laundryRoom_creakOpen
 ---
+<<play_sound "doorCreak">>
 <<set_flag "laundry_door_open">>
 <<set_flag "dryer_open">>
 <<set_flag "photo_up">>
--creeeak-
+<<wait 1.5>>
 What was that?
 ===

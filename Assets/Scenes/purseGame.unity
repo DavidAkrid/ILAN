@@ -595,6 +595,71 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &707453137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707453139}
+  - component: {fileID: 707453138}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &707453138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707453137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: Pickup1
+    clip: {fileID: 8300000, guid: 6f363c1e0e527a4468afbd6b71d901a7, type: 3}
+    volume: 1
+    loop: 0
+  - name: Pickup2
+    clip: {fileID: 8300000, guid: 6a770bc06c7c3b844a848f532ae20a8f, type: 3}
+    volume: 1
+    loop: 0
+  - name: HandWoosh
+    clip: {fileID: 8300000, guid: 4028c11eddcc1284686a3869d310342a, type: 3}
+    volume: 0.637
+    loop: 0
+  - name: Smackdown
+    clip: {fileID: 8300000, guid: c8d19194e083d884c8f414ad02cf69d6, type: 3}
+    volume: 1
+    loop: 0
+  - name: Dragging
+    clip: {fileID: 8300000, guid: 5b507a2496304e643af7f4274a1cf4ec, type: 3}
+    volume: 0.861
+    loop: 0
+--- !u!4 &707453139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707453137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2713379, y: 0.30531633, z: -0.036155574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782941775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,3 +1367,4 @@ SceneRoots:
   - {fileID: 1526552951}
   - {fileID: 1370683031}
   - {fileID: 782941778}
+  - {fileID: 707453139}

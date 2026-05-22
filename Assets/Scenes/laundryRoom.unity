@@ -815,6 +815,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: laundryRoom_enter
   dialogueRunner: {fileID: 1746768811}
+  clickSound: 
   autoStart: 1
 --- !u!4 &1195710485
 Transform:
@@ -1197,6 +1198,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1896533455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896533456}
+  - component: {fileID: 1896533457}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896533456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896533455}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0095767, y: 1.2556314, z: -0.035490666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1896533457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896533455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: laundryTone
+    clip: {fileID: 8300000, guid: c8df790d7ba6cb8478b1a3fe5a148abe, type: 3}
+    volume: 1
+    loop: 1
+  - name: dryerOpen
+    clip: {fileID: 8300000, guid: 982354d8c081241439cd75185296b8a5, type: 3}
+    volume: 1
+    loop: 0
+  - name: dryerClose
+    clip: {fileID: 8300000, guid: 203e35d02942a3046973fb0539f54bc8, type: 3}
+    volume: 1
+    loop: 0
+  - name: throwOutTrash
+    clip: {fileID: 8300000, guid: 4f0f1d6fe8b644a4b94dfc43aaff0029, type: 3}
+    volume: 0.755
+    loop: 0
+  - name: doorCreak
+    clip: {fileID: 8300000, guid: cda2654a9554e83418900f87e1de1724, type: 3}
+    volume: 0.836
+    loop: 0
+  - name: paperSlam
+    clip: {fileID: 8300000, guid: 84c586201eb01db49b0a1e729745243a, type: 3}
+    volume: 1
+    loop: 0
+  - name: catMeow
+    clip: {fileID: 8300000, guid: a9e6eaeeef065614f9514cfc5a398649, type: 3}
+    volume: 0.314
+    loop: 0
+  - name: backdoorClose
+    clip: {fileID: 8300000, guid: 50c5d5185a1d98d4882cca239647670a, type: 3}
+    volume: 1
+    loop: 0
+  - name: backdoorOpen
+    clip: {fileID: 8300000, guid: f064bfb96f405c540928c0f32cf14ebc, type: 3}
+    volume: 1
+    loop: 0
 --- !u!4 &2107842699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2011496736779193508, guid: 468f48fa211696f478b5a54c24e76bb9, type: 3}
@@ -1215,3 +1297,4 @@ SceneRoots:
   - {fileID: 7419664}
   - {fileID: 1391526777}
   - {fileID: 588144954}
+  - {fileID: 1896533456}

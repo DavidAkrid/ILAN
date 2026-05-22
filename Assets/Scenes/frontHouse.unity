@@ -216,6 +216,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &571921418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571921420}
+  - component: {fileID: 571921419}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &571921419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571921418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: OutsideHouseAmbience
+    clip: {fileID: 8300000, guid: e82f555b7160fbc4a96fe9c098b5f443, type: 3}
+    volume: 1
+    loop: 1
+  - name: Deadbolt
+    clip: {fileID: 8300000, guid: affb66714668a1349b43a0a8a40c9824, type: 3}
+    volume: 1
+    loop: 0
+  - name: BusStopSteps
+    clip: {fileID: 8300000, guid: 4149b41927e0e074e9180842f94ba103, type: 3}
+    volume: 0.297
+    loop: 0
+  - name: frontDoor
+    clip: {fileID: 8300000, guid: 2248464df0a3eb04086e2d421973dbe4, type: 3}
+    volume: 0.75
+    loop: 0
+--- !u!4 &571921420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571921418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30969632, y: -1.1724567, z: -0.084306315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996992789
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +846,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: front_House
   dialogueRunner: {fileID: 113051291}
+  clickSound: 
   autoStart: 1
 --- !u!4 &2102196524
 Transform:
@@ -811,3 +873,4 @@ SceneRoots:
   - {fileID: 2102196524}
   - {fileID: 1020440313}
   - {fileID: 996992792}
+  - {fileID: 571921420}

@@ -1,6 +1,10 @@
 ﻿title: livingRoom_enterDark
 ---
+<<play_sound "livingRoomTone">>
+<<play_sound "clockSound">>
+//<<play_sound "carpetFootsteps">>
 <<if !has_flag("living_room_lights_on")>>
+  <<wait 1>>
   Oh my god...
   This house terrifies me in the dark.
   What even is that?!
@@ -8,6 +12,7 @@
   <<load_scene "livingRoom_Lightswitch">>
 <<elseif has_flag("living_lights_justFlipped")>>
   <<unset_flag "living_lights_justFlipped">>
+  <<wait 1>>
   Better.
 <<elseif has_flag("mable_scared") and !has_flag("mable_found") and !has_flag("mable_monologue")>>
   It looks like Mable ran off.
@@ -23,11 +28,15 @@ title: livingRoom_lightSwitch
 ---
 <<set_flag "living_room_lights_on">>
 <<set_flag "living_lights_justFlipped">>
+<<play_sound "lightSwitch">>
 <<load_scene "livingRoom">>
 ===
 
 title: livingRoom_bedroomDoor
 ---
+<<stop_sound "livingRoomTone">>
+<<stop_sound "clockSound">>
+<<play_sound "bedroomDoorMain">>
 <<load_scene "bedRoom">>
 ===
 
@@ -38,6 +47,8 @@ title: livingRoom_cat
 
 title: livingRoom_kitchen
 ---
+<<stop_sound "livingRoomTone">>
+<<stop_sound "clockSound">>
 <<load_scene "kitchen">>
 ===
 
@@ -53,18 +64,22 @@ title: catTree_Mable
     Looks like Mable is feeling okay...
     set_flag("mable_ok")
   <<endif>>
+  <<play_sound "kiraMeow2">>
   ~mew~
 <<elseif !has_flag("mable_intro")>>
+  <<play_sound "kiraMeow1">>
   My beautiful cat, Mable.
   <<set_flag "mable_intro">>
 <<else>>
-~Mew~
+  <<play_sound "kiraMeow1">>
+  ~Mew~
 <<endif>>
 <<load_scene "livingRoom">>
 ===
 
 title: livingRoom_Photo
 ---
+<<play_sound "photograph">>
 <<load_scene "livingRoom_photo">>
 ===
 

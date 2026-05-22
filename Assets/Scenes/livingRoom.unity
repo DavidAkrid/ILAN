@@ -289,6 +289,7 @@ MonoBehaviour:
     project: {fileID: 7545569452688597077, guid: 38c284a48e185ff4c90f1bdaa5051f89, type: 3}
     nodeName: livingRoom_enterDark
   dialogueRunner: {fileID: 188374456}
+  clickSound: 
   autoStart: 1
 --- !u!4 &60693148
 Transform:
@@ -418,6 +419,83 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &459623466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459623468}
+  - component: {fileID: 459623467}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &459623467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459623466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb5403be23e5774ebf397d81d3b3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - name: livingRoomTone
+    clip: {fileID: 8300000, guid: ac16d291507d0ec44b9ef523fa89d758, type: 3}
+    volume: 1
+    loop: 1
+  - name: clockSound
+    clip: {fileID: 8300000, guid: 03a595e82f33993409b631ea8edc7a66, type: 3}
+    volume: 0.126
+    loop: 1
+  - name: lightSwitch
+    clip: {fileID: 8300000, guid: d1e0e6285dd658a43890eee606c97440, type: 3}
+    volume: 0.866
+    loop: 0
+  - name: photograph
+    clip: {fileID: 8300000, guid: b708824ca979b59458bf34606233d615, type: 3}
+    volume: 0.866
+    loop: 0
+  - name: bedroomDoorMain
+    clip: {fileID: 8300000, guid: 7e96ac033f22b1b479c92e73b952e521, type: 3}
+    volume: 0.866
+    loop: 0
+  - name: carpetFootsteps
+    clip: {fileID: 8300000, guid: 209f7301dfb7b544b8ab5327d8c6ae50, type: 3}
+    volume: 0.866
+    loop: 0
+  - name: kiraMeow1
+    clip: {fileID: 8300000, guid: b2eb2d26ce7ee284db0aa575f0f04a22, type: 3}
+    volume: 1
+    loop: 0
+  - name: kiraMeow2
+    clip: {fileID: 8300000, guid: 7dad97f38187bbd45a92377716352aa8, type: 3}
+    volume: 1
+    loop: 0
+--- !u!4 &459623468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459623466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20151268, y: -0.66425616, z: -0.016808877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1657,3 +1735,4 @@ SceneRoots:
   - {fileID: 1250623218}
   - {fileID: 1418808974}
   - {fileID: 1396241648}
+  - {fileID: 459623468}

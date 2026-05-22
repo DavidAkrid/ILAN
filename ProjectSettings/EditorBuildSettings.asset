@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScene 2.unity
     guid: e1a1a262e52b0104ca8010ecf3da74bc
   - enabled: 1
+    path: Assets/Scenes/bus.unity
+    guid: add0ec9c0f1942b41b350347dbd95392
+  - enabled: 1
     path: Assets/Scenes/bathRoom.unity
     guid: 99eaa9bd5868eee4caad4910cc82eaee
   - enabled: 1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/bedroom_underBed.unity
     guid: ca795143f9bfe4e49b9d0199537674cf
-  - enabled: 1
-    path: Assets/Scenes/bus.unity
-    guid: add0ec9c0f1942b41b350347dbd95392
   - enabled: 1
     path: Assets/Scenes/busStop.unity
     guid: a9f6b81c167a9b74a93d9a70123d18f2
@@ -59,9 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/catTree.unity
     guid: 183e71402e3523744bc196e7e7de8029
-  - enabled: 1
-    path: Assets/Scenes/newscene.unity
-    guid: a4ad04d9cc1b80f47b6f75e13d98d33c
   - enabled: 1
     path: Assets/Scenes/laundryRoom.unity
     guid: 35a8ec5161db7dc43b71ef24a3da9359
