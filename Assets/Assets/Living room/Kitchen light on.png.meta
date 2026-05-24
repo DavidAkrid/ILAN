@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kitchen light on_0: -8177490173355443437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Door cracked_0: -7815375925524304553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bus stop purse_0: 6827313155433693856
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

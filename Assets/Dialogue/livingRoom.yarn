@@ -16,7 +16,7 @@
   Better.
 <<elseif has_flag("mable_scared") and !has_flag("mable_found") and !has_flag("mable_monologue")>>
   It looks like Mable ran off.
-  She probably got scared by that creep.
+  She probably got scared by that noise.
   I wonder where she went off to?
   <<set_flag "mable_monologue">>
 <<elseif has_flag("mable_monologue") and !has_flag("mable_found")>>
@@ -60,9 +60,9 @@ title: livingRoom_return
 title: catTree_Mable
 ---
 <<if has_flag("mable_found")>>
-  <<if has_flag("mable_ok")>>
+  <<if !has_flag("mable_ok")>>
     Looks like Mable is feeling okay...
-    set_flag("mable_ok")
+    <<set_flag("mable_ok")>>
   <<endif>>
   <<play_sound "kiraMeow2">>
   ~mew~
@@ -72,7 +72,7 @@ title: catTree_Mable
   <<set_flag "mable_intro">>
 <<else>>
   <<play_sound "kiraMeow1">>
-  ~Mew~
+  ~mew~
 <<endif>>
 <<load_scene "livingRoom">>
 ===
@@ -92,4 +92,31 @@ title: photograph
   A photo of me and my ex.
 <<endif>>
 <<load_scene "livingRoom">>
+===
+
+title: livingRoom_couch
+---
+My grandma gave me this couch.
+===
+
+title: livingRoom_clock
+---
+The ticking is soothing to me.
+===
+
+title: livingRoom_catTreeInspect
+---
+Mable loves her cat tree.
+===
+
+title: livingRoom_consoles
+---
+My ex left all his video games.
+I'm still waiting for him to pick them up.
+===
+
+title: livingRoom_picture
+---
+It's a painting I found at a yard sale.
+Not bad.
 ===
