@@ -3,9 +3,10 @@
 <<play_sound "phonePickup">>
 <<if has_flag("phone_ringing")>>
   <<stop_sound "phoneRinging">>
-  OMG! Jenny!
-  We're going out to Highlands tonight!
-  Come grab a drink with us!
+  *Hey, Jenny!*
+  *We're going out to the bar tonight!*
+  *Come grab a drink with us!*
+  *I'll pick you up!*
   -click-
   <<unset_flag "phone_ringing">>
   <<set_flag "intent_to_leave">>

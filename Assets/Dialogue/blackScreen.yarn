@@ -4,8 +4,9 @@
 <<if has_flag("intent_to_leave")>>
   <<play_sound "barAmbience">>
   Yay! Jenny's here!
-  Party!
-  Drinks!
+  How are things since...?
+  Have you heard that...
+  You should come out more often!
   See you next time!
   <<unset_flag "intent_to_leave">>
   <<set_flag "broken_house">>

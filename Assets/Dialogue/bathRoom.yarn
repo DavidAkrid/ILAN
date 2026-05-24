@@ -1,7 +1,7 @@
 ﻿title: bathRoom_enter
 ---
 <<play_sound "bathroomTone">>
-<<play_sound "woodenFootsteps">>
+//<<play_sound "woodenFootsteps">>
 <<if !has_flag("bathroom_lights_on")>>
   <<wait 1>>
   <<set_flag "bathroom_lights_on">>
@@ -32,4 +32,14 @@ title: bathRoom_return
 ---
 <<stop_sound "bathroomTone">>
 <<load_scene "bedRoom">>
+===
+
+title: bathroom_counter
+---
+Nothing interesting here.
+===
+
+title: bathroom_toilet
+---
+Flush.
 ===

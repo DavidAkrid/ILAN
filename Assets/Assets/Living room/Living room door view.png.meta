@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Living room door view_0: -8094379887144090121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

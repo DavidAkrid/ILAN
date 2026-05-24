@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laundry closed_0: 6520954590744080732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

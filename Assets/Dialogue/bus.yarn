@@ -1,10 +1,9 @@
 ﻿title: bus
-position: -13,-217
 ---
 <<play_sound "busAmbience">>
 I am on the bus.
-Long day working.
-Weee! Bus goes fast!
+I'm so glad it's Friday.
+It's been a long week. 
 <<set_flag "bus_stopped">>
 <<play_sound "busDoor">>
 Looks like my stop! Time to get off.
@@ -13,14 +12,12 @@ Looks like my stop! Time to get off.
 ===
 
 title: bus_Stop
-position: -248,33
 ---
 <<play_sound "busStopAmbience">>
-
 <<if !has_flag("purse_game_complete")>>
   <<play_sound "busStopSteps">>
   Whew! Almost Home!
-  (I stumble getting off the bus...)
+  Shit! I tripped on the stairs.
   <<play_sound "busStopFall">>
   <<load_scene_fade "purseGame">>
 <<else>>
@@ -33,7 +30,7 @@ title: bus_StopCreep
 position: -59,221
 ---
 <<play_sound "creepAmbience">>
-Stranger: Hey pretty lady ~
+Stranger: Hey, pretty lady.
 Stranger: You dropped this...
 Yikes, this guy scares me..
 I better get out of here...

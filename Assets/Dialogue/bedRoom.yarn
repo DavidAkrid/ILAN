@@ -57,3 +57,18 @@ A beautiful necklace...
 It was given to me by someone...
 <<load_scene "bedRoom">>
 ===
+
+title: bedroom_Shelf
+---
+My mom gave me that candle.
+===
+
+title: bedroom_books
+---
+I love books.
+===
+
+title: bedroom_picture
+---
+My grandfather painted this.
+===

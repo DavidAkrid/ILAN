@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Front door broken_0: 8107922441903894339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

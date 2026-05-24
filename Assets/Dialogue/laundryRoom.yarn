@@ -57,7 +57,7 @@ title: laundryRoom_backdoor
 <<if has_flag("holding_trash")>>
   <<set_flag "laundry_door_open">>
   <<play_sound "backdoorOpen">>
-  I open the door and throw out the trash.
+  You took out the trash.
   <<play_sound "throwOutTrash">>
   <<wait 1>>
   <<unset_flag "laundry_door_open">>
@@ -94,4 +94,9 @@ title: laundryRoom_creakOpen
 <<set_flag "photo_up">>
 <<wait 1.5>>
 What was that?
+===
+
+title: laundryRoom_cabinets
+---
+My detergent is up there.
 ===

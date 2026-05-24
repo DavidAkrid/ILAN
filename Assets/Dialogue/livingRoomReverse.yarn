@@ -30,11 +30,11 @@ title: livingRoomReverse_keys
 ---
 <<if has_flag("intent_to_leave")>>
   <<if has_flag("keys_obtained")>>
-    I have my keys.
+    I already have my keys.
     <<stop>>
   <<else>>
     <<play_sound "keys">>
-    I pick up my keys
+    You pick up the keys.
     <<set_flag "keys_obtained">>
     <<stop>>
   <<endif>>
@@ -75,6 +75,7 @@ title: livingRoomReverse_LicenseView
 <<wait 0.1>>
 This... is my driver's license...
 That creep from the bus stop must have kept it.
+I don't like that he knows where I live.
 <<play_sound "licenseRead">>
 <<set_flag "top_note_read">>
 ===
@@ -87,6 +88,7 @@ title: livingRoomReverse_NoteView
   <<stop>>
 <<endif>>
 I'm going to throw up...
+I'm never riding that bus again.
 <<unset_flag "note_on_ground">>
 <<play_sound "noteInteract">>
 <<load_scene "livingRoomReverse">>
@@ -99,7 +101,7 @@ title: livingRoomReverse_Starter
   <<load_scene "frontDoorDisturbed">>
 <<elseif has_flag("intent_to_leave")>>
   <<if !has_flag("keys_obtained") or !has_flag("coat_obtained")>>
-    I just need my coat and my keys
+    I just need my coat and my keys.
   <<endif>>
 <<endif>>
 ===
@@ -122,7 +124,8 @@ They stopped...
 
 title: livingRoomReverse_MandarinCafe
 ---
-You've gotta be joking me.
+A menu for Chinese food?
+Are you serious?
 <<play_sound "unfoldPaper">>
 <<unset_flag "front_door_menu">>
 <<unset_flag "window_check">>

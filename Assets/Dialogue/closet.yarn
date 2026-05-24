@@ -32,7 +32,7 @@ title: closet_click
   <<set_flag "closet_lights_burnt">>
   <<play_sound "lightbulbBreak">>
   <<wait 0.25>>
-  Ahh!
+  AH!
   I nearly had a heart attack.
   That damn lightbulb.
   I'll need to pick up another soon.
@@ -64,6 +64,7 @@ title: closet_flashlightComplete
 ---
 Nothing.
 Just clothes and shoes.
+Maybe I'm overreacting.
 <<set_flag "closet_searched">>
 <<set_flag "front_door_disturbed">>
 <<load_scene "closet">>

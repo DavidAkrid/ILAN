@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Microwaveoff_0: 6776112413144802201
+      Microwaveoff_1: 5938610941842082805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
