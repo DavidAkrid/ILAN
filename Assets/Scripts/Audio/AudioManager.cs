@@ -67,6 +67,7 @@ public class AudioManager : MonoBehaviour
         var nc = am.Get(name);
         if (nc == null) return;
 
+
         if (nc.loop)
         {
             if (am.loopingSources.ContainsKey(name)) return;

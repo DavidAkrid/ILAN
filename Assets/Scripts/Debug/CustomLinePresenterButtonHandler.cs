@@ -18,7 +18,7 @@ namespace Yarn.Unity
     {
         [SerializeField] DialogueRunner? dialogueRunner;
         [SerializeField] GameObject? arrowIndicator;
-        [SerializeField] private float typingSoundCooldown = 2f;
+        [SerializeField] private float typingSoundCooldown = 0.06f;
 
         private bool lineComplete = false;
         private bool isShowingLine = false;
@@ -44,6 +44,7 @@ namespace Yarn.Unity
         {
             lineComplete = false;
             isShowingLine = true;
+            lastTypingSoundTime = -1f;
             if (arrowIndicator != null) arrowIndicator.SetActive(false);
         }
 
